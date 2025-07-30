@@ -4,6 +4,7 @@ import { MapPin, Star, ArrowRight } from "lucide-react";
 import mountainsImage from "@/assets/destination-mountains.jpg";
 import parisImage from "@/assets/destination-paris.jpg";
 import japanImage from "@/assets/destination-japan.jpg";
+import { sendDestinationToWhatsApp } from "@/utils/whatsapp";
 
 const destinations = [
   {
@@ -102,7 +103,12 @@ const FeaturedDestinations = () => {
                     <div className="text-2xl font-bold text-primary">{destination.price}</div>
                   </div>
                   
-                  <Button variant="default" size="sm" className="group/btn">
+                  <Button 
+                    variant="default" 
+                    size="sm" 
+                    className="group/btn"
+                    onClick={() => sendDestinationToWhatsApp(destination)}
+                  >
                     Explore
                     <ArrowRight className="h-4 w-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
                   </Button>

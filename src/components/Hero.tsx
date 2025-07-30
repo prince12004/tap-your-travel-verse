@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Calendar, MapPin, Users, Search, Plane } from "lucide-react";
 import heroImage from "@/assets/hero-beach.jpg";
+import { sendToWhatsApp } from "@/utils/whatsapp";
 
 const Hero = () => {
   const [searchData, setSearchData] = useState({
@@ -94,7 +95,11 @@ const Hero = () => {
               </div>
 
               {/* Search Button */}
-              <Button variant="hero" className="h-12">
+              <Button 
+                variant="hero" 
+                className="h-12"
+                onClick={() => sendToWhatsApp(searchData)}
+              >
                 <Search className="h-5 w-5 mr-2" />
                 Search
               </Button>

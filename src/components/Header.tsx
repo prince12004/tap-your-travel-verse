@@ -20,11 +20,11 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#home" className="text-foreground hover:text-primary transition-colors">Home</a>
-            <a href="#destinations" className="text-foreground hover:text-primary transition-colors">Destinations</a>
-            <a href="#packages" className="text-foreground hover:text-primary transition-colors">Packages</a>
-            <a href="#about" className="text-foreground hover:text-primary transition-colors">About</a>
-            <a href="#contact" className="text-foreground hover:text-primary transition-colors">Contact</a>
+            <a href="/" className="text-foreground hover:text-primary transition-colors">Home</a>
+            <a href="/destinations" className="text-foreground hover:text-primary transition-colors">Destinations</a>
+            <a href="/packages" className="text-foreground hover:text-primary transition-colors">Packages</a>
+            <a href="/about" className="text-foreground hover:text-primary transition-colors">About</a>
+            <a href="/contact" className="text-foreground hover:text-primary transition-colors">Contact</a>
           </nav>
 
           {/* Desktop CTA */}
@@ -46,11 +46,11 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden py-4 animate-fade-in">
             <nav className="flex flex-col space-y-4">
-              <a href="#home" className="text-foreground hover:text-primary transition-colors">Home</a>
-              <a href="#destinations" className="text-foreground hover:text-primary transition-colors">Destinations</a>
-              <a href="#packages" className="text-foreground hover:text-primary transition-colors">Packages</a>
-              <a href="#about" className="text-foreground hover:text-primary transition-colors">About</a>
-              <a href="#contact" className="text-foreground hover:text-primary transition-colors">Contact</a>
+              <a href="/" className="text-foreground hover:text-primary transition-colors">Home</a>
+              <a href="/destinations" className="text-foreground hover:text-primary transition-colors">Destinations</a>
+              <a href="/packages" className="text-foreground hover:text-primary transition-colors">Packages</a>
+              <a href="/about" className="text-foreground hover:text-primary transition-colors">About</a>
+              <a href="/contact" className="text-foreground hover:text-primary transition-colors">Contact</a>
               <div className="flex flex-col space-y-2 pt-4">
                 <Button variant="ghost">Sign In</Button>
                 <Button variant="hero">Book Now</Button>
