@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { MapPin, Star, ArrowRight } from "lucide-react";
+import { MapPin, Star, ArrowRight, MessageCircle } from "lucide-react";
 import mountainsImage from "@/assets/destination-mountains.jpg";
 import parisImage from "@/assets/destination-paris.jpg";
 import japanImage from "@/assets/destination-japan.jpg";
@@ -109,6 +109,7 @@ const FeaturedDestinations = () => {
                     className="group/btn"
                     onClick={() => sendDestinationToWhatsApp(destination)}
                   >
+                    <MessageCircle className="h-4 w-4 mr-2" />
                     Explore
                     <ArrowRight className="h-4 w-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
                   </Button>

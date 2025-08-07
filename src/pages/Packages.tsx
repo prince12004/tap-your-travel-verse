@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Clock, Users, Star, Plane, Hotel, MapPin } from "lucide-react";
+import { Clock, Users, Star, Plane, Hotel, MapPin, MessageCircle } from "lucide-react";
 
 const packages = [
   {
@@ -172,6 +172,7 @@ const Packages = () => {
                       onClick={() => sendToWhatsApp(pkg)}
                       className="group/btn"
                     >
+                      <MessageCircle className="h-4 w-4 mr-2" />
                       Book Now
                     </Button>
                   </div>

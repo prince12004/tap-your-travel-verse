@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Calendar, MapPin, Users, Search, Plane } from "lucide-react";
+import { Calendar, MapPin, Users, Search, Plane, MessageCircle } from "lucide-react";
 import heroImage from "@/assets/hero-beach.jpg";
 import { sendToWhatsApp } from "@/utils/whatsapp";
 
@@ -100,7 +100,8 @@ const Hero = () => {
                 className="h-12"
                 onClick={() => sendToWhatsApp(searchData)}
               >
-                <Search className="h-5 w-5 mr-2" />
+                <MessageCircle className="h-5 w-5 mr-2" />
+                <Search className="h-4 w-4 mr-2" />
                 Search
               </Button>
             </div>
