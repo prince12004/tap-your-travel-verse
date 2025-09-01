@@ -9,7 +9,7 @@ export const sendToWhatsApp = (searchData: any) => {
 
 Please help me find the best options for my trip!`;
 
-  const whatsappUrl = `https://wa.me/1234567890?text=${encodeURIComponent(message)}`;
+  const whatsappUrl = `https://wa.me/918090214387?text=${encodeURIComponent(message)}`;
   window.open(whatsappUrl, '_blank');
 };
 
@@ -25,6 +25,6 @@ ${destination.description}
 
 Please provide more information and help me plan this trip!`;
 
-  const whatsappUrl = `https://wa.me/1234567890?text=${encodeURIComponent(message)}`;
+  const whatsappUrl = `https://wa.me/918090214387?text=${encodeURIComponent(message)}`;
   window.open(whatsappUrl, '_blank');
 };

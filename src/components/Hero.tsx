@@ -1,9 +1,17 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Calendar, MapPin, Users, Search, Plane, MessageCircle } from "lucide-react";
+import {
+  Calendar,
+  MapPin,
+  Users,
+  Search,
+  Plane,
+  MessageCircle,
+} from "lucide-react";
 import heroImage from "@/assets/hero-beach.jpg";
 import { sendToWhatsApp } from "@/utils/whatsapp";
+import "../index.css";
 
 const Hero = () => {
   const [searchData, setSearchData] = useState({
@@ -11,16 +19,19 @@ const Hero = () => {
     departure: "",
     checkin: "",
     checkout: "",
-    guests: "1"
+    guests: "1",
   });
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section
+      id="home"
+      className="herosectionss relative min-h-screen flex items-center justify-center overflow-hidden"
+    >
       {/* Background Image */}
       <div className="absolute inset-0">
-        <img 
-          src={heroImage} 
-          alt="Travel Destination" 
+        <img
+          src={heroImage}
+          alt="Travel Destination"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-hero-gradient"></div>
@@ -28,24 +39,29 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center">
-        <div className="max-w-4xl mx-auto animate-fade-in">
+        <div
+          className="max-w-8xl mx-auto animate-fade-in"
+          style={{ width: "100%" }}
+        >
           {/* Floating Plane Icon */}
           <div className="mb-8 flex justify-center">
-            <Plane className="h-16 w-16 text-white animate-float" />
+            <Plane className="h-16 w-20 text-white animate-float" />
           </div>
 
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
             Tap Your Next
-            <span className="block text-primary">Adventure</span>
+            <span className="block text-primary" style={{ color: "white" }}>
+              Adventure
+            </span>
           </h1>
-          
+
           <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-2xl mx-auto">
-            Discover extraordinary destinations and create unforgettable memories. 
-            Your perfect trip is just a tap away.
+            Discover extraordinary destinations and create unforgettable
+            memories. Your perfect trip is just a tap away.
           </p>
 
           {/* Search Form */}
-          <div className="bg-glass backdrop-blur-lg rounded-2xl p-6 md:p-8 shadow-destination max-w-4xl mx-auto border border-white/20">
+          <div className="bg-glass backdrop-blur-lg rounded-2xl p-6 md:p-8 shadow-destination max-w-5xl mx-auto border border-white/20">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
               {/* Destination */}
               <div className="relative">
@@ -53,50 +69,71 @@ const Hero = () => {
                 <Input
                   placeholder="Where to?"
                   value={searchData.destination}
-                  onChange={(e) => setSearchData({...searchData, destination: e.target.value})}
-                  className="pl-10 h-12 bg-white/80 border-white/30"
-                />
-              </div>
-
-              {/* Departure */}
-              <div className="relative">
-                <Calendar className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-                <Input
-                  type="date"
-                  placeholder="Departure"
-                  value={searchData.departure}
-                  onChange={(e) => setSearchData({...searchData, departure: e.target.value})}
+                  onChange={(e) =>
+                    setSearchData({
+                      ...searchData,
+                      destination: e.target.value,
+                    })
+                  }
                   className="pl-10 h-12 bg-white/80 border-white/30"
                 />
               </div>
 
               {/* Check-in */}
               <div className="relative">
-                <Calendar className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-                <Input
-                  type="date"
-                  placeholder="Check-in"
-                  value={searchData.checkin}
-                  onChange={(e) => setSearchData({...searchData, checkin: e.target.value})}
-                  className="pl-10 h-12 bg-white/80 border-white/30"
-                />
+                {/* Conditionally hide label */}
+                {!searchData.checkin && (
+                  <label
+                    htmlFor="checkin"
+                    className="absolute checkss left-3 top-0 text-muted-foreground text-sm lg:hidden"
+                  >
+                    Start date
+                  </label>
+                )}
+                <div className="flex items-center">
+                  <Calendar className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+                  <Input
+                    id="checkin"
+                    type="date"
+                    placeholder="Check-in"
+                    value={searchData.checkin}
+                    onChange={(e) =>
+                      setSearchData({ ...searchData, checkin: e.target.value })
+                    }
+                    className="pl-10 h-12 bg-white/80 border-white/30"
+                  />
+                </div>
               </div>
 
               {/* Check-out */}
               <div className="relative">
-                <Calendar className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-                <Input
-                  type="date"
-                  placeholder="Check-out"
-                  value={searchData.checkout}
-                  onChange={(e) => setSearchData({...searchData, checkout: e.target.value})}
-                  className="pl-10 h-12 bg-white/80 border-white/30"
-                />
+                {/* Conditionally hide label */}
+                {!searchData.checkout && (
+                  <label
+                    htmlFor="checkout"
+                    className="absolute checkss left-3 top-0 text-muted-foreground text-sm lg:hidden"
+                  >
+                    End date
+                  </label>
+                )}
+                <div className="flex items-center">
+                  <Calendar className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+                  <Input
+                    id="checkout"
+                    type="date"
+                    placeholder="Check-out"
+                    value={searchData.checkout}
+                    onChange={(e) =>
+                      setSearchData({ ...searchData, checkout: e.target.value })
+                    }
+                    className="pl-10 h-12 bg-white/80 border-white/30"
+                  />
+                </div>
               </div>
 
               {/* Search Button */}
-              <Button 
-                variant="hero" 
+              <Button
+                variant="hero"
                 className="h-12"
                 onClick={() => sendToWhatsApp(searchData)}
               >

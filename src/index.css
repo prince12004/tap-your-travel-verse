@@ -197,3 +197,18 @@ All colors MUST be HSL.
     box-shadow: var(--card-hover-shadow);
   }
 }
+
+
+/* globals.css (or your custom Tailwind file) */
+
+  /* For smaller screens (e.g., mobile devices) */
+  @media (max-width: 640px) {
+    .herosectionss {
+      padding-top: 90px; /* Adjust the margin for mobile view */
+    }
+    .checkss{
+      margin: 14px;
+      padding-left: 16px;
+      font-size: 16px;
+    }
+  }

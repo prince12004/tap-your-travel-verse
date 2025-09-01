@@ -16,22 +16,30 @@ const Footer = () => {
                 className="h-8 w-auto brightness-0 invert"
               />
             </div>
-            <p className="text-background/80 leading-relaxed">
-              Your trusted travel companion, making dream destinations accessible with 
-              exceptional service and unbeatable value.
+            <p className="text-background/70 leading-relaxed" style={{ fontSize: '14px' }}>
+            Turning dream destinations into real adventures with top-tier service and unbeatable value.
             </p>
             <div className="space-y-2">
-              <div className="flex items-center space-x-2 text-sm">
+              <div className="flex items-start space-x-2 text-sm">
                 <MapPin className="h-4 w-4" />
-                <span>123 Travel Street, Adventure City, AC 12345</span>
+                <span>Floor No.: 6th
+                          <br />
+                          Building No./Flat No.: B5/605
+                          <br />
+                          Road/Street: Main Road, Misrod  <br />
+                          City/Town/Village: Bhopal
+                          <br />
+                          State: Madhya Pradesh
+                          <br />
+                          PIN Code: 462047</span>
               </div>
               <div className="flex items-center space-x-2 text-sm">
                 <Phone className="h-4 w-4" />
-                <span>+1 (555) 123-TRIP</span>
+                <span>+91 80902 14387</span>
               </div>
               <div className="flex items-center space-x-2 text-sm">
                 <Mail className="h-4 w-4" />
-                <span>hello@tapyourtrip.com</span>
+                <span>info@tapyourtrip.com</span>
               </div>
             </div>
           </div>
@@ -78,7 +86,7 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div className="text-sm text-background/80">
-            © 2024 Tap Your Trip. All rights reserved.
+            © 2025 Tap Your Trip. All rights reserved.
           </div>
 
           {/* Social Media */}
